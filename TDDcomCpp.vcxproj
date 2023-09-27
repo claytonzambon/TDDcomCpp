@@ -127,7 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="TDDcomCpp.cpp" />
+    <ClCompile Include="Lance.cpp" />
+    <ClCompile Include="Leilao.cpp" />
+    <ClCompile Include="Usuario.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Lance.hpp" />
+    <ClInclude Include="Leilao.hpp" />
+    <ClInclude Include="Usuario.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
