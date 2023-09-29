@@ -47,5 +47,8 @@
     <ClInclude Include="resource.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="catch.hpp">
+      <Filter>Arquivos de Recurso</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

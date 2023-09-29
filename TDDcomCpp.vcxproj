@@ -135,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Avaliador.hpp" />
+    <ClInclude Include="catch.hpp" />
     <ClInclude Include="Lance.hpp" />
     <ClInclude Include="Leilao.hpp" />
     <ClInclude Include="resource.h" />

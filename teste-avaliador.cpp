@@ -1,6 +1,8 @@
-#include "Avaliador.hpp"
-#include <iostream>
+#define CATCH_CONFIG_MAIN
+#include "catch.hpp"
 
+
+/*
 int main() {
 
 	// ArrangeActAssert (Triple A)
@@ -31,3 +33,4 @@ int main() {
 
 	return 0;
 }
+*/
