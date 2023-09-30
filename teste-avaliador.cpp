@@ -1,9 +1,10 @@
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
+#include "Avaliador.hpp"
 
 
-/*
-int main() {
+
+TEST_CASE("Deve recuperar maior lance de leilão em ordem Crescente") {
 
 	// ArrangeActAssert (Triple A)
 	// GivenWhenThen
@@ -21,16 +22,5 @@ int main() {
 	leiloeiro.avalia(leilao);
 
 	// Assert or Then (Então) -> Verificando se tudo deu certo
-	float valorEsperado = 2000;
-
-	if (valorEsperado == leiloeiro.recuperaMaiorValor()) {
-		std::cout << "TESTE OK" << std::endl;
-	}
-	else {
-		std::cout << "TESTE FALHOU" << std::endl;
-	}
-	
-
-	return 0;
+	REQUIRE(2000 == leiloeiro.recuperaMaiorValor());
 }
-*/
