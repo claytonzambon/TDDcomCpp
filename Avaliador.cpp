@@ -8,7 +8,8 @@ void Avaliador::avalia(Leilao leilao)
 		if (lance.recuperaValor() > maiorValor) {
 			maiorValor = lance.recuperaValor();
 		}
-		else if (lance.recuperaValor() < menorValor){
+		
+		if (lance.recuperaValor() < menorValor){
 			menorValor = lance.recuperaValor();
 		}
 	}
