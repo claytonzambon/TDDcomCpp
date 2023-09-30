@@ -13,8 +13,8 @@ TEST_CASE("Deve recuperar maior lance de leilão em ordem Crescente") {
 	Lance primeiroLance(Usuario("Clayton Zambon"), 1000);
 	Lance segundoLance(Usuario("Karine Zambon"), 2000);
 	Leilao leilao("Fiat 147 0Km");
-	leilao.recebeLance(segundoLance);
 	leilao.recebeLance(primeiroLance);
+	leilao.recebeLance(segundoLance);
 
 	Avaliador leiloeiro;
 
@@ -34,8 +34,8 @@ TEST_CASE("Deve recuperar maior lance de leilão em ordem Decrescente") {
 	Lance primeiroLance(Usuario("Clayton Zambon"), 2000);
 	Lance segundoLance(Usuario("Karine Zambon"), 1000);
 	Leilao leilao("Fiat 147 0Km");
-	leilao.recebeLance(segundoLance);
 	leilao.recebeLance(primeiroLance);
+	leilao.recebeLance(segundoLance);
 
 	Avaliador leiloeiro;
 
@@ -44,4 +44,25 @@ TEST_CASE("Deve recuperar maior lance de leilão em ordem Decrescente") {
 
 	// Assert or Then (Então) -> Verificando se tudo deu certo
 	REQUIRE(2000 == leiloeiro.recuperaMaiorValor());
+}
+
+TEST_CASE("Deve recuperar menor lance de leilão em ordem Decrescente") {
+
+	// ArrangeActAssert (Triple A)
+	// GivenWhenThen
+
+	// Arrange or Given (Dado) -> Preparando ambiente para os testes
+	Lance primeiroLance(Usuario("Clayton Zambon"), 2000);
+	Lance segundoLance(Usuario("Karine Zambon"), 1000);
+	Leilao leilao("Fiat 147 0Km");
+	leilao.recebeLance(primeiroLance);
+	leilao.recebeLance(segundoLance);
+
+	Avaliador leiloeiro;
+
+	// Act or When (Quando) -> Executando o código a ser testado
+	leiloeiro.avalia(leilao);
+
+	// Assert or Then (Então) -> Verificando se tudo deu certo
+	REQUIRE(1000 == leiloeiro.recuperaMenorValor());
 }
