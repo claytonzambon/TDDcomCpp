@@ -111,6 +111,6 @@ TEST_CASE("Deve recuperar os 3 maiores lances") {
 	leiloeiro.avalia(leilao);
 
 	// Assert or Then (Então) -> Verificando se tudo deu certo
-	std::vector<Lance> maiores3Lances = leiloeiro.recupera3MaioresLances();
+	auto maiores3Lances = leiloeiro.recupera3MaioresLances();
 	REQUIRE(3 == maiores3Lances.size());
 }
