@@ -26,13 +26,13 @@ Leilao emOrdemDecrescente()
 	return leilao;
 }
 
-TEST_CASE("Deve recuperar maior lance de leilão em ordem Crescente") {
+TEST_CASE("Deve recuperar maior lance de leilão") {
 
 	// ArrangeActAssert (Triple A)
 	// GivenWhenThen
 
 	// Arrange or Given (Dado) -> Preparando ambiente para os testes
-	Leilao leilao = emOrdemCrescente();
+	Leilao leilao = GENERATE(emOrdemCrescente(), emOrdemDecrescente());
 	Avaliador leiloeiro;
 
 	// Act or When (Quando) -> Executando o código a ser testado
@@ -42,45 +42,13 @@ TEST_CASE("Deve recuperar maior lance de leilão em ordem Crescente") {
 	REQUIRE(2000 == leiloeiro.recuperaMaiorValor());
 }
 
-TEST_CASE("Deve recuperar maior lance de leilão em ordem Decrescente") {
+TEST_CASE("Deve recuperar menor lance de leilão") {
 
 	// ArrangeActAssert (Triple A)
 	// GivenWhenThen
 
 	// Arrange or Given (Dado) -> Preparando ambiente para os testes
-	Leilao leilao = emOrdemDecrescente();
-	Avaliador leiloeiro;
-
-	// Act or When (Quando) -> Executando o código a ser testado
-	leiloeiro.avalia(leilao);
-
-	// Assert or Then (Então) -> Verificando se tudo deu certo
-	REQUIRE(2000 == leiloeiro.recuperaMaiorValor());
-}
-
-TEST_CASE("Deve recuperar menor lance de leilão em ordem Decrescente") {
-
-	// ArrangeActAssert (Triple A)
-	// GivenWhenThen
-
-	// Arrange or Given (Dado) -> Preparando ambiente para os testes
-	Leilao leilao = emOrdemDecrescente();
-	Avaliador leiloeiro;
-
-	// Act or When (Quando) -> Executando o código a ser testado
-	leiloeiro.avalia(leilao);
-
-	// Assert or Then (Então) -> Verificando se tudo deu certo
-	REQUIRE(1000 == leiloeiro.recuperaMenorValor());
-}
-
-TEST_CASE("Deve recuperar menor lance de leilão em ordem Crescente") {
-
-	// ArrangeActAssert (Triple A)
-	// GivenWhenThen
-
-	// Arrange or Given (Dado) -> Preparando ambiente para os testes
-	Leilao leilao = emOrdemCrescente();
+	Leilao leilao = GENERATE(emOrdemDecrescente(), emOrdemCrescente());
 	Avaliador leiloeiro;
 
 	// Act or When (Quando) -> Executando o código a ser testado
