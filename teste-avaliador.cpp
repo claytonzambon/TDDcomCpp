@@ -2,13 +2,8 @@
 #include "catch.hpp"
 #include "Avaliador.hpp"
 
-
-
-TEST_CASE("Deve recuperar maior lance de leilão em ordem Crescente") {
-
-	// ArrangeActAssert (Triple A)
-	// GivenWhenThen
-
+Leilao emOrdemCrescente()
+{
 	// Arrange or Given (Dado) -> Preparando ambiente para os testes
 	Lance primeiroLance(Usuario("Clayton Zambon"), 1000);
 	Lance segundoLance(Usuario("Karine Zambon"), 2000);
@@ -16,6 +11,28 @@ TEST_CASE("Deve recuperar maior lance de leilão em ordem Crescente") {
 	leilao.recebeLance(primeiroLance);
 	leilao.recebeLance(segundoLance);
 
+	return leilao;
+}
+
+Leilao emOrdemDecrescente()
+{
+	// Arrange or Given (Dado) -> Preparando ambiente para os testes
+	Lance primeiroLance(Usuario("Clayton Zambon"), 2000);
+	Lance segundoLance(Usuario("Karine Zambon"), 1000);
+	Leilao leilao("Fiat 147 0Km");
+	leilao.recebeLance(primeiroLance);
+	leilao.recebeLance(segundoLance);
+
+	return leilao;
+}
+
+TEST_CASE("Deve recuperar maior lance de leilão em ordem Crescente") {
+
+	// ArrangeActAssert (Triple A)
+	// GivenWhenThen
+
+	// Arrange or Given (Dado) -> Preparando ambiente para os testes
+	Leilao leilao = emOrdemCrescente();
 	Avaliador leiloeiro;
 
 	// Act or When (Quando) -> Executando o código a ser testado
@@ -31,12 +48,7 @@ TEST_CASE("Deve recuperar maior lance de leilão em ordem Decrescente") {
 	// GivenWhenThen
 
 	// Arrange or Given (Dado) -> Preparando ambiente para os testes
-	Lance primeiroLance(Usuario("Clayton Zambon"), 2000);
-	Lance segundoLance(Usuario("Karine Zambon"), 1000);
-	Leilao leilao("Fiat 147 0Km");
-	leilao.recebeLance(primeiroLance);
-	leilao.recebeLance(segundoLance);
-
+	Leilao leilao = emOrdemDecrescente();
 	Avaliador leiloeiro;
 
 	// Act or When (Quando) -> Executando o código a ser testado
@@ -52,12 +64,7 @@ TEST_CASE("Deve recuperar menor lance de leilão em ordem Decrescente") {
 	// GivenWhenThen
 
 	// Arrange or Given (Dado) -> Preparando ambiente para os testes
-	Lance primeiroLance(Usuario("Clayton Zambon"), 2000);
-	Lance segundoLance(Usuario("Karine Zambon"), 1000);
-	Leilao leilao("Fiat 147 0Km");
-	leilao.recebeLance(primeiroLance);
-	leilao.recebeLance(segundoLance);
-
+	Leilao leilao = emOrdemDecrescente();
 	Avaliador leiloeiro;
 
 	// Act or When (Quando) -> Executando o código a ser testado
@@ -73,12 +80,7 @@ TEST_CASE("Deve recuperar menor lance de leilão em ordem Crescente") {
 	// GivenWhenThen
 
 	// Arrange or Given (Dado) -> Preparando ambiente para os testes
-	Lance primeiroLance(Usuario("Clayton Zambon"), 1000);
-	Lance segundoLance(Usuario("Karine Zambon"), 2000);
-	Leilao leilao("Fiat 147 0Km");
-	leilao.recebeLance(primeiroLance);
-	leilao.recebeLance(segundoLance);
-
+	Leilao leilao = emOrdemCrescente();
 	Avaliador leiloeiro;
 
 	// Act or When (Quando) -> Executando o código a ser testado
