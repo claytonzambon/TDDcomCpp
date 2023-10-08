@@ -104,3 +104,14 @@ TEST_CASE("Leilão não deve receber lances consecutivos do mesmo usuário")
 	REQUIRE(1000 == leilao.recuperaLances()[0].recuperaValor());
 }
 
+TEST_CASE("Usuário deve saber informar o seu primeiro nome")
+{
+	//Arrange
+	Usuario clayton("Clayton Zambon");
+
+	//Act
+	std::string primeiroNome = clayton.recuperaPrimeiroNome();
+
+	//Assert
+	REQUIRE("Clayton" == primeiroNome);
+}
