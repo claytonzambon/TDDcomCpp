@@ -1,4 +1,3 @@
-#define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 #include "Avaliador.hpp"
 
@@ -84,34 +83,4 @@ TEST_CASE("Avaliador")
 		REQUIRE(2000 == maiores3Lances[1].recuperaValor());
 		REQUIRE(1500 == maiores3Lances[2].recuperaValor());
 	}
-}
-
-TEST_CASE("Leilão não deve receber lances consecutivos do mesmo usuário")
-{
-	//Arrange
-	Leilao leilao("Fiat 147 0Km");
-	Usuario zambon("Clayton Zambon");
-
-	Lance primeiroLance(zambon, 1000);
-	Lance segundoLance(zambon, 1500);
-
-	//Act
-	leilao.recebeLance(primeiroLance);
-	leilao.recebeLance(segundoLance);
-
-	//Assert
-	REQUIRE(1 == leilao.recuperaLances().size());
-	REQUIRE(1000 == leilao.recuperaLances()[0].recuperaValor());
-}
-
-TEST_CASE("Usuário deve saber informar o seu primeiro nome")
-{
-	//Arrange
-	Usuario clayton("Clayton Zambon");
-
-	//Act
-	std::string primeiroNome = clayton.recuperaPrimeiroNome();
-
-	//Assert
-	REQUIRE("Clayton" == primeiroNome);
 }

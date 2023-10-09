@@ -130,7 +130,10 @@
     <ClCompile Include="Avaliador.cpp" />
     <ClCompile Include="Lance.cpp" />
     <ClCompile Include="Leilao.cpp" />
+    <ClCompile Include="main-test.cpp" />
     <ClCompile Include="teste-avaliador.cpp" />
+    <ClCompile Include="teste-leilao.cpp" />
+    <ClCompile Include="teste-usuario.cpp" />
     <ClCompile Include="Usuario.cpp" />
   </ItemGroup>
   <ItemGroup>
