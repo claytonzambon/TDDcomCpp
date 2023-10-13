@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <string_view>
+#include <memory>
 #include "Usuario.hpp"
 
 void* operator new(size_t bytes)
@@ -12,6 +12,11 @@ void* operator new(size_t bytes)
 void ExibeNome(std::string_view nome)
 {
 	std::cout << nome << std::endl;
+}
+
+void ExibeNomeUsuario(std::unique_ptr<Usuario>& usuario)
+{
+	std::cout << usuario->recuperaNome() << std::endl;
 }
 
 int main()
@@ -26,11 +31,10 @@ int main()
 	ExibeNome(nomeMulher);
 	ExibeNome("Um nome qualquer sem estar na Heap");
 
-	Usuario* usuario = new Usuario("Clayton Zambon");
+	std::unique_ptr<Usuario> usuario = std::make_unique<Usuario>(new Usuario("Clayton Zambon"));
+	//Usuario* usuario = new Usuario("Clayton Zambon");
 
-	std::cout << usuario->recuperaNome() << std::endl;
-
-	delete usuario;
+	ExibeNomeUsuario(usuario);
 	
 	return 0;
 }
