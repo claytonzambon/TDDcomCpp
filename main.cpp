@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <string_view>
+#include "Usuario.hpp"
 
 void* operator new(size_t bytes)
 {
@@ -23,7 +24,13 @@ int main()
 
 	ExibeNome(nomeHomem);
 	ExibeNome(nomeMulher);
-	ExibeNome("Um nome qualquer sem estad na Heap");
+	ExibeNome("Um nome qualquer sem estar na Heap");
+
+	Usuario* usuario = new Usuario("Clayton Zambon");
+
+	std::cout << usuario->recuperaNome() << std::endl;
+
+	delete usuario;
 	
 	return 0;
 }
