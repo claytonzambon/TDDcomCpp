@@ -14,7 +14,7 @@ void ExibeNome(std::string_view nome)
 	std::cout << nome << std::endl;
 }
 
-void ExibeNomeUsuario(std::unique_ptr<Usuario>& usuario)
+void ExibeNomeUsuario(std::shared_ptr<Usuario> usuario)
 {
 	std::cout << usuario->recuperaNome() << std::endl;
 }
@@ -31,7 +31,7 @@ int main()
 	ExibeNome(nomeMulher);
 	ExibeNome("Um nome qualquer sem estar na Heap");
 
-	std::unique_ptr<Usuario> usuario = std::make_unique<Usuario>(new Usuario("Clayton Zambon"));
+	std::shared_ptr<Usuario> usuario = std::make_shared<Usuario>("Clayton Zambon");
 	//Usuario* usuario = new Usuario("Clayton Zambon");
 
 	ExibeNomeUsuario(usuario);
