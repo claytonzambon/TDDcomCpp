@@ -3,11 +3,11 @@
 #include <memory>
 #include "Usuario.hpp"
 
-void* operator new(size_t bytes)
+/*void* operator new(size_t bytes)
 {
 	std::cout << "Alocando " << bytes << " bytes" << std::endl;
 	return malloc(bytes);
-}
+}*/
 
 void ExibeNome(std::string_view nome)
 {
