@@ -14,6 +14,7 @@ public:
     const std::vector<Lance>& recuperaLances() const;
     void recebeLance(const Lance& lance);
     bool comparaSeLancesDeDiferentesUsuarios(const Lance& lance);
+    void recebeLance(Lance&&);
 };
 
 #endif /* Leilao_hpp */

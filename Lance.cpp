@@ -14,10 +14,3 @@ std::string Lance::recuperaNomeUsuario() const
 {
     return usuario.recuperaNome();
 }
-
-Lance::Lance(const Lance& outroLance) : 
-    usuario(outroLance.usuario),
-    valor(outroLance.valor)
-{
-    std::cout << "Executando cópia de lance de valor " << valor << std::endl;
-}

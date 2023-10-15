@@ -12,7 +12,8 @@ TEST_CASE("Leilão não deve receber lances consecutivos do mesmo usuário")
 	Lance segundoLance(zambon, 1500);
 
 	//Act
-	leilao.recebeLance(primeiroLance);
+	//leilao.recebeLance(primeiroLance);
+	leilao.recebeLance(Lance(zambon, 1000));
 	leilao.recebeLance(segundoLance);
 
 	//Assert
