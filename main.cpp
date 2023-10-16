@@ -19,7 +19,7 @@ void ExibeNomeUsuario(std::shared_ptr<Usuario> usuario)
 	std::cout << usuario->recuperaNome() << std::endl;
 }
 
-int main()
+int main2()
 {
 	std::cout << "----------------------" << std::endl;
 	std::string casal = "Seu Madruga & Bruxa do Setenta e Um";
@@ -36,5 +36,63 @@ int main()
 
 	ExibeNomeUsuario(usuario);
 	
+	return 0;
+}
+
+class String
+{
+private:
+	char* data;
+	size_t size;
+
+public:
+	String(const char* string)
+	{
+		std::cout << "String criada" << std::endl;
+		size = strlen(string);
+		data = new char[size];
+		memcpy(data, string, size);
+	}
+
+	String(const String& outraString)
+	{
+		std::cout << "String copiada" << std::endl;
+		size = strlen(outraString.data);
+		data = new char[size];
+		memcpy(data, outraString.data, size);
+	}
+
+	String(String&& outraString)
+	{
+		std::cout << "String movida" << std::endl;
+		size = outraString.size;
+		data = outraString.data;
+
+		outraString.size = 0;
+		outraString.data = nullptr;
+	}
+
+	~String()
+	{
+		delete data;
+	}
+};
+
+class User
+{
+private:
+	String nome;
+public:
+	User(const String& string) : nome(string)
+	{
+	}
+
+	User(String&& string) : nome((String&&)string)
+	{
+	}
+};
+
+int main() {
+	User(String("Zambon"));
 	return 0;
 }
