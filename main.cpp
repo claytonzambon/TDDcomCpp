@@ -51,6 +51,7 @@ public:
 		std::cout << "String criada" << std::endl;
 		size = strlen(string);
 		data = new char[size];
+		data[size] = 0;
 		memcpy(data, string, size);
 	}
 
@@ -87,7 +88,7 @@ public:
 	{
 	}
 
-	User(String&& string) : nome((String&&)string)
+	User(String&& string) : nome(std::move(string))
 	{
 	}
 };
